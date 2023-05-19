@@ -1,0 +1,46 @@
+\cvsection{Personal Projects}
+
+\begin{cventries}
+  \cventry
+    {Analysis of support and opposition political relationships} % Degree
+	{Politiquices.PT - https://www.politiquices.pt} % Institution
+    {} % Location
+    {} % Date(s)
+    {
+      \begin{cvitems} % Description(s) bullet points
+        \item {A website which allows to explore political interactions of support and opposition based on news articles, which was awarded the \textbf{2nd place on the "Arquivo.pt Awards 2021"} organised by the Portuguese Web Archive.}
+		\item {I've built and tuned supervised models to detect relationships between politicians and link them to Wikidata, based on news headlines. The trained models were applied to archived news articles, generating an RDF semantic graph connecting politicians through a support or opposition relationship sustained by news articles.}
+		\item {Using a SPARQL endpoint it's possible to issue queries like: \textit{Which politicians affiliated with party X opposed/supported politicians from party Y?}}
+		% \item {The interface to the SPARQL endpoint is based on FastAPI and ReactJS.}
+		\item {The project gained the interest of journalists, political scientists and social humanities researchers.}
+      \end{cvitems}
+    }
+\end{cventries}
+
+\begin{cventries}
+ \cventry
+   {Bootstrapping Semantic Relationships with Distributional Semantics} % Degree
+   {BREDS - https://pypi.org/project/breds} % Institution
+   {} % Location
+   {} % Date(s)
+   {
+     \begin{cvitems} % Description(s) bullet points
+		\item {A Python package implementation based on results from my Ph.D. thesis. BREDS is an approach to extract named-entity relationships without labelled data by relying instead on an initial set of seeds, i.e. pairs of named-entities representing relationship type to be extracted. The algorithm uses the seeds to learn extraction patterns and expands the initial set of seeds using distributional semantics to generalize the relationship while limiting the semantic drift.}
+     \end{cvitems}
+   }
+\end{cventries}
+
+\begin{cventries}
+ \cventry
+   {Named-Entity Recognition considering partial matching} % Degree
+   {nervaluate - https://pypi.org/project/nervaluate} % Institution
+   {} % Location
+   {} % Date(s)
+   {
+     \begin{cvitems} % Description(s) bullet points
+     	\item {An open-source software package to evaluate named-entity recognition systems considering partial entity matching. Originally started with a blog post I wrote about the subject which attracted the interest of several people and converged into a Python package which is currently maintained by myself and other contributors.}
+     \end{cvitems}
+   }
+\end{cventries}
+
+
