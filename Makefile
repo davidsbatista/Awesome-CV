@@ -1,31 +1,14 @@
-.PHONY: examples cv clean
+.PHONY: cv clean
 
-CC = xelatex
-EXAMPLES_DIR = examples
-RESUME_DIR = examples/resume
-CV_DIR = examples/cv
-MYCV_DIR = dsbatista
-RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
-CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
-MYCV_SRCS = $(shell find $(MYCV_DIR) -name '*.tex')
+CV_DIR = dsbatista
+SRCS = $(wildcard $(CV_DIR)/*.tex) awesome-cv.cls
 
-examples: $(foreach x, coverletter cv resume, $(EXAMPLES_DIR)/$x.pdf)
+cv: $(CV_DIR)/cv.pdf
 
-# Build the personal CV only: `make cv`
-cv: $(MYCV_DIR)/cv.pdf
-
-$(MYCV_DIR)/cv.pdf: $(MYCV_SRCS)
-	TEXINPUTS="$(MYCV_DIR):$$TEXINPUTS" \
-	  $(CC) -output-directory=$(MYCV_DIR) $(MYCV_DIR)/cv.tex
-
-$(EXAMPLES_DIR)/resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
-
-$(EXAMPLES_DIR)/cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
-
-$(EXAMPLES_DIR)/coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+# cv.tex uses bare \input{summary.tex}, so $(CV_DIR) must be on TEXINPUTS.
+# The class resolves from the repo root, which is the working directory here.
+$(CV_DIR)/cv.pdf: $(SRCS)
+	TEXINPUTS="$(CV_DIR):$$TEXINPUTS" xelatex -output-directory=$(CV_DIR) $(CV_DIR)/cv.tex
 
 clean:
-	rm -rf $(EXAMPLES_DIR)/*.pdf $(MYCV_DIR)/*.pdf
+	rm -f $(CV_DIR)/cv.pdf $(CV_DIR)/*.aux $(CV_DIR)/*.log
