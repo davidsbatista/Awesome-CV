@@ -190,7 +190,8 @@
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 % \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{darktext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+% \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{awesome} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
@@ -652,8 +653,10 @@
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
 	  % {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       % \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-	  {\entrypositionstyle{#1} & \entrylocationstyle{#3} \\
-	   \entrytitlestyle{#2} & \entrydatestyle{#4} \\}	  
+	  % {\entrypositionstyle{#1} & \entrylocationstyle{#3} \\
+	  %  \entrytitlestyle{#2} & \entrydatestyle{#4} \\}
+	  {\entrypositionstyle{#1} & \entrydatestyle{#4} \\
+	   \entrytitlestyle{#2} & \entrylocationstyle{#3} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
 }
