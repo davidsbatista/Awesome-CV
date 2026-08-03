@@ -710,7 +710,9 @@
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
+    % Label + value must sum to \textwidth, otherwise the value column
+    % overflows the right margin once its text is long enough to wrap.
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} R{3.8cm} L{\textwidth - 4.4cm}}
 }{%
     \end{tabular*}
   \end{center}
