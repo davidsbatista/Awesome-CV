@@ -17,27 +17,26 @@
 	{
       \begin{cvitems} % Description(s) of tasks/responsibilities
 %
-		% --- 1. Maintainership -------------------------------------------------
-		\item {Core maintainer of Haystack, an open-source LLM orchestration framework used by thousands of developers globally. Sustained day-to-day operations: contributing with new components and features, managing release cycles, reviewing pull requests, triaging GitHub issues, mentoring external contributors. Together with the other team members, helped plan and led several aspects of the framework: which new components to add, public interfaces, and testing standards}
+		% --- Maintainership -------------------------------------------------
+		\item {Core maintainer of Haystack, an open-source LLM orchestration framework. Sustained day-to-day operations: new components and features, release cycles, pull request reviews, issue triage and mentoring external contributors. Shaped core abstractions: what components to add, their interfaces, how they interact with the pipeline core, and testing standards.}
 %
-		% --- 2. Components, public interfaces & retrieval experiments ----------
-		\item {Designed the Protocols defining Haystack's embedder and retriever interfaces, and contributed components against them: sentence-window and auto-merging retrievers, hybrid-retrievals, query expansion and multi-query retrievers, recursive and embedding-based document splitters, and LLM-based metadata and content extractors. Ran experiments comparing retrieval techniques (Hypothetical Document Embeddings, Document Summary Index, maximum marginal relevance), presented at PyCon Lithuania 2025.}
+		% --- Pipeline breakpoints & crash recovery --------------------------
+		\item {Designed and shipped pipeline breakpoints, from proof-of-concept to core framework feature: pipelines and agents pause at any component, serialise state to a snapshot for inspection, and resume from it. Generalised the mechanism into crash recovery, so a failing run surfaces its last valid snapshot instead of a full restart.}
 %
-		% --- 3. Pipeline breakpoints & crash recovery --------------------------
-		\item {Designed and shipped pipeline breakpoints in Haystack, carrying the feature from proof-of-concept into the core framework: pipelines and agents can be paused at any component, serialised to a snapshot, inspected, and resumed from that point. Generalised the mechanism into crash recovery, so a failing run surfaces its last valid snapshot instead of restarting from scratch.}
+		% --- Retrieval & document store layer -------------------------------
+		\item {Owned recurring work on the retrieval and document store layer: formalised the embedder and retriever interfaces as Protocols, added components against them (sentence-window and auto-merging retrievers, hybrid and multi-query retrieval, query expansion, recursive and embedding-based splitters), and consolidated the backends under one API and a shared test suite replacing per-backend duplicates. Benchmarked retrieval techniques and presented the results at PyCon Lithuania 2025.}
 %
-		% --- 4. Document store standardisation ---------------------------------
-		\item {Standardised the API across the document store backends, uniformising their operation signatures and enforcing a shared conformance test suite replacing duplicated per-backend tests with a single mixin.}
+		% --- Telemetry & usage analytics ------------------------------------
+		\item {Turned collected telemetry into the team's first reliable picture of adoption and component usage: set up an hourly export of raw events from PostHog into BigQuery, with SQL views, Looker Studio dashboards and automated weekly reports.}
 %
-		% --- 6. Telemetry & usage analytics ------------------------------------
-		\item {Built the framework's usage-analytics pipeline end to end: a containerised collector exporting events hourly into BigQuery, with SQL views, dashboards and automated weekly reports, giving the team its first reliable picture of adoption and component usage.}
-%
-		% --- 7. n8n / Hayhooks integration -------------------------------------
+		% --- n8n / Hayhooks integration -------------------------------------
 		%\item {Prototyped and built the integration between Haystack and n8n, writing a custom TypeScript node supporting HTTP, MCP and A2A connections, with workflows indexing data from Gmail, Google Drive, and Notion, and an email-triggered question-answering assistant.}
+%
+        % --- Agents/Claude Code  -------------------------------------
+		% Explicar como usas claude code e outros diáriamente para desenvolver software, PR reviews, ajudar nos release cyles, 
       \end{cvitems}
     }
-
-
+	
 %---------------------------------------------------------
 
 
