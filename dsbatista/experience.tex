@@ -16,20 +16,24 @@
     {Feb 2024 - Present} % Date(s)
 	{
       \begin{cvitems} % Description(s) of tasks/responsibilities
+%
 		% --- 1. Maintainership -------------------------------------------------
-		\item {Core maintainer of Haystack, an open-source LLM orchestration framework used by thousands of developers globally. Sustained day-to-day operations: new components and features, release cycles, reviewing community pull requests, triaging GitHub issues and Discord questions, mentoring external contributors.}
-		% --- 2. Components & retrieval techniques ------------------------------
-		\item {Haystack components contributions: sentence-window retriever, auto-merging retriever, maximum marginal relevance ranker, Hypothetical Document Embeddings technique, Document Summary Index retrieval technique. An OpenSearch hybrid-retrieval SuperComponent, query expansion and multi-query retrievers, recursive and embedding-based document splitters, LLM-based metadata and content extractors, alongside the Protocols defining the embedder and retriever interfaces. Carried out experiments comparing the different retrieval techniques and presented the results at PyCon Lithuania 2025.}
+		\item {Core maintainer of Haystack, an open-source LLM orchestration framework used by thousands of developers globally. Sustained day-to-day operations: contributing with new components and features, managing release cycles, reviewing pull requests, triaging GitHub issues, mentoring external contributors. Together with the other team members, helped plan and led several aspects of the framework: which new components to add, public interfaces, and testing standards}
+%
+		% --- 2. Components, public interfaces & retrieval experiments ----------
+		\item {Designed the Protocols defining Haystack's embedder and retriever interfaces, and contributed components against them: sentence-window and auto-merging retrievers, hybrid-retrievals, query expansion and multi-query retrievers, recursive and embedding-based document splitters, and LLM-based metadata and content extractors. Ran experiments comparing retrieval techniques (Hypothetical Document Embeddings, Document Summary Index, maximum marginal relevance), presented at PyCon Lithuania 2025.}
+%
 		% --- 3. Pipeline breakpoints & crash recovery --------------------------
 		\item {Designed and shipped pipeline breakpoints in Haystack, carrying the feature from proof-of-concept into the core framework: pipelines and agents can be paused at any component, serialised to a snapshot, inspected, and resumed from that point. Generalised the mechanism into crash recovery, so a failing run surfaces its last valid snapshot instead of restarting from scratch.}
+%
 		% --- 4. Document store standardisation ---------------------------------
-		\item {Standardised the API around document store backends (OpenSearch, Elasticsearch, Qdrant, Weaviate, pgvector, MongoDB, Pinecone, Chroma, Oracle and FAISS among them), uniformising their operation signatures and enforcing a shared conformance test suite replacing duplicated per-backend tests with a single mixin, surfacing real bugs in the process.}
-		% --- 5. Security -------------------------------------------------------
-		\item {Drove the framework's prompt-injection work: reviewed the literature, designed countermeasures, and built a prompt-injection classifier distributed as a private package, together with a reference template demonstrating detection inside a RAG application. Authored a guide and working implementation of the Dual LLM pattern for untrusted-content handling.}
+		\item {Standardised the API across the document store backends, uniformising their operation signatures and enforcing a shared conformance test suite replacing duplicated per-backend tests with a single mixin.}
+%
 		% --- 6. Telemetry & usage analytics ------------------------------------
 		\item {Built the framework's usage-analytics pipeline end to end: a containerised collector exporting events hourly into BigQuery, with SQL views, dashboards and automated weekly reports, giving the team its first reliable picture of adoption and component usage.}
+%
 		% --- 7. n8n / Hayhooks integration -------------------------------------
-		\item {Prototyped and built the integration between Haystack and n8n, writing a custom TypeScript node supporting HTTP, MCP and A2A connections, with workflows indexing data from Gmail, Google Drive, and Notion, and an email-triggered question-answering assistant.}
+		%\item {Prototyped and built the integration between Haystack and n8n, writing a custom TypeScript node supporting HTTP, MCP and A2A connections, with workflows indexing data from Gmail, Google Drive, and Notion, and an email-triggered question-answering assistant.}
       \end{cvitems}
     }
 
